@@ -38,13 +38,20 @@ namespace WindowsFormsApp2
 
         }
 
+        private void nome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void salva_Click(object sender, EventArgs e)
         {
-            
             prodotto[dim].nome = nome.Text;
             prodotto[dim].prezzo = float.Parse(prezzo.Text);
             dim++;
+            listView1.Clear();
             Visualizza(prodotto);
+            nome.Clear();
+            prezzo.Clear();
         }
 
         public void Visualizza(Prodotto[] prodotto)
@@ -57,9 +64,94 @@ namespace WindowsFormsApp2
             
         }
 
+        private static int Cancellazione(Prodotto[] prodotto, string parola, ref int dim)
+        {
+            for (int i = 0; i < prodotto.Length; i++)
+            {
+                if (prodotto[i].nome == parola)
+                {
+                    int b = i;
+                    while (b < prodotto.Length - 1)
+                    {
+                        prodotto[b].nome = prodotto[b + 1].nome;
+                        b++;
+                    }
+                    dim--;
+                    return 1;
+                }
+            }
+            for (int i = 0; i < dim; i++)
+            {
+                if (prodotto[i].nome != parola)
+                {
+                    return 0;
+                }
+            }
+            return -1;
+        }
+
         public string ProdString(Prodotto prodotto)
         {
             return "Nome: " + prodotto.nome + " Prezzo: " + prodotto.prezzo.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            const string message = "Sei sicuro di voler cancellare il Prodotto?";
+            const string caption = "Cancellazione Prodotto";
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                int o = Cancellazione(prodotto, nome.Text, ref dim);
+                Visualizza(prodotto);
+                if (o == 1)
+                {
+                    MessageBox.Show("La cancellazione è avvenuta correttamente");
+                }
+                else
+                {
+                    MessageBox.Show("C'è stato un problema nella cancellazione");
+                }
+                nome.Clear();
+                prezzo.Clear();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ModificaNome(ref prodotto, nome.Text, textBox2.Text);
+            listView1.Clear();
+            Visualizza(prodotto);
+            nome.Clear();
+            prezzo.Clear();
+            textBox2.Clear();
+        }
+
+        private static void ModificaNome(ref Prodotto[] prodotto, string parola, string parolaGiusta)
+        {
+            for (int i = 0; i < prodotto.Length; i++)
+            {
+                if (prodotto[i].nome.Equals(parola))
+                {
+                    prodotto[i].nome = parolaGiusta;
+                    break;
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (textBox2.Visible == false)
+            {
+                label3.Visible = true;
+                textBox2.Visible = true;
+
+            }
+            else
+            {
+                label3.Visible = false;
+                textBox2.Visible = false;
+            }
         }
     }
 }
