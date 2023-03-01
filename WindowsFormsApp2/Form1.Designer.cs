@@ -39,6 +39,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nome
@@ -78,7 +82,9 @@
             // salva
             // 
             this.salva.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.salva.ForeColor = System.Drawing.Color.Coral;
+            this.salva.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.salva.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salva.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.salva.Location = new System.Drawing.Point(128, 237);
             this.salva.Name = "salva";
             this.salva.Size = new System.Drawing.Size(75, 23);
@@ -89,7 +95,8 @@
             // 
             // listView1
             // 
-            this.listView1.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.listView1.BackColor = System.Drawing.Color.Khaki;
+            this.listView1.Cursor = System.Windows.Forms.Cursors.No;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(470, 38);
             this.listView1.Name = "listView1";
@@ -100,7 +107,9 @@
             // 
             // button1
             // 
-            this.button1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.button1.Location = new System.Drawing.Point(209, 237);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
@@ -111,7 +120,9 @@
             // 
             // button2
             // 
-            this.button2.ForeColor = System.Drawing.Color.Crimson;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.button2.Location = new System.Drawing.Point(315, 237);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
@@ -122,6 +133,8 @@
             // 
             // button3
             // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(28, 136);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(91, 39);
@@ -148,12 +161,58 @@
             this.label3.Text = "Nome Modificato";
             this.label3.Visible = false;
             // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.button4.Location = new System.Drawing.Point(128, 266);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Totale";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(258, 146);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 13;
+            this.textBox1.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(258, 129);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Percentuale";
+            this.label4.Visible = false;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.button5.Location = new System.Drawing.Point(209, 265);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(100, 23);
+            this.button5.TabIndex = 15;
+            this.button5.Text = "Percentuale";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Cornsilk;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(828, 471);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button3);
@@ -166,7 +225,8 @@
             this.Controls.Add(this.prezzo);
             this.Controls.Add(this.nome);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "                                                                                 " +
+    "                                                                        ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -186,6 +246,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button5;
     }
 }
 

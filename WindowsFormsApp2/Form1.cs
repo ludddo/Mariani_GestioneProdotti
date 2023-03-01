@@ -52,6 +52,7 @@ namespace WindowsFormsApp2
             Visualizza(prodotto);
             nome.Clear();
             prezzo.Clear();
+            nome.Focus();
         }
 
         public void Visualizza(Prodotto[] prodotto)
@@ -92,7 +93,7 @@ namespace WindowsFormsApp2
 
         public string ProdString(Prodotto prodotto)
         {
-            return "Nome: " + prodotto.nome + " Prezzo: " + prodotto.prezzo.ToString();
+            return "Nome: " + prodotto.nome + " Prezzo: " + prodotto.prezzo.ToString("0.00") + "€";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -145,13 +146,53 @@ namespace WindowsFormsApp2
             {
                 label3.Visible = true;
                 textBox2.Visible = true;
+                label4.Visible = true;
+                textBox1.Visible = true;
 
             }
             else
             {
                 label3.Visible = false;
                 textBox2.Visible = false;
+                label4.Visible = false;
+                textBox1.Visible = false;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Il costo totale è " + Totale(ref dim, prodotto), "Totale");
+        }
+
+        private float Totale(ref int dim, Prodotto[] prodotto)
+        {
+            float totale = 0;
+
+            for (int i = 0; i < dim; i++)
+            {
+                totale = totale + prodotto[i].prezzo;
+            }
+
+            return totale;
+        }
+
+        private void Percentuale(ref Prodotto[] prodotto, int percentuale, int dim) // prezzo prodotto + ((percentuale * prezzo prodotto) / 100)
+        {
+
+            for (int i = 0; i < dim; i++)
+            {
+                prodotto[i].prezzo = prodotto[i].prezzo + ((percentuale * prodotto[i].prezzo) / 100);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Percentuale(ref prodotto, int.Parse(textBox1.Text), dim);
+            listView1.Clear();
+            Visualizza(prodotto);
+            nome.Clear();
+            prezzo.Clear();
+            nome.Focus();
         }
     }
 }
