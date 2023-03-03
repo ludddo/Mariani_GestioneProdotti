@@ -234,5 +234,19 @@ namespace WindowsFormsApp2
                 }
             }
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string fileName = @"testo.csv";
+
+            using (StreamReader sr = File.OpenText(fileName))
+            {
+                string s = "";
+                while ((s = sr.ReadLine()) != null)
+                {
+                    listView1.Items.Add(s);
+                }
+            }
+        }
     }
 }
