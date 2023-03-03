@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsApp2
 {
@@ -193,6 +194,45 @@ namespace WindowsFormsApp2
             nome.Clear();
             prezzo.Clear();
             nome.Focus();
+
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            ScritturaFile(prodotto, dim);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ScritturaFileAppend(prodotto, dim);
+        }
+
+        private void ScritturaFile(Prodotto[] prodotto, int dim)
+        {
+            string fileName = @"testo.csv";
+
+            using (StreamWriter writer = new StreamWriter(fileName, append:false))
+            {
+                for (int i = 0; i < dim; i++)
+                {
+                    writer.WriteLine("Nome: " + prodotto[i].nome + " Prezzo: " + prodotto[i].prezzo + "€");
+                }
+            }
+        }
+
+        private void ScritturaFileAppend(Prodotto[] prodotto, int dim)
+        {
+            string fileName = @"testo.csv";
+
+            using (StreamWriter writer = new StreamWriter(fileName, append: true))
+            {
+                for (int i = 0; i < dim; i++)
+                {
+                    writer.WriteLine("Nome: " + prodotto[i].nome + " Prezzo: " + prodotto[i].prezzo + "€");
+                }
+            }
         }
     }
 }
