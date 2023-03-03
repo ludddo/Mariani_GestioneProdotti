@@ -63,6 +63,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.GhostWhite;
             this.label1.Location = new System.Drawing.Point(125, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
@@ -73,6 +74,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.GhostWhite;
             this.label2.Location = new System.Drawing.Point(255, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
@@ -135,6 +137,7 @@
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.button3.Location = new System.Drawing.Point(28, 136);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(91, 39);
@@ -154,6 +157,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.GhostWhite;
             this.label3.Location = new System.Drawing.Point(125, 130);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 13);
@@ -184,6 +188,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.GhostWhite;
             this.label4.Location = new System.Drawing.Point(258, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 13);
