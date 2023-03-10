@@ -84,5 +84,14 @@
   <ItemGroup>
     <None Include="Resources\1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HD-wallpaper-blue-background-ultra-aero-colorful-blue-winter-design-background-cold-shades-clean-simple-gradient-lightblue.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallpapersden.com_artistic-landscape-view_1920x1080.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallpapersden.com_artistic-landscape-view_1920x10801.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

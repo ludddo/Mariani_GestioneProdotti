@@ -17,6 +17,7 @@ namespace WindowsFormsApp2
         {
             public string nome;
             public float prezzo;
+            public int qnt;
         }
 
         public Prodotto [] prodotto;
@@ -31,7 +32,7 @@ namespace WindowsFormsApp2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -46,8 +47,22 @@ namespace WindowsFormsApp2
 
         private void salva_Click(object sender, EventArgs e)
         {
-            prodotto[dim].nome = nome.Text;
-            prodotto[dim].prezzo = float.Parse(prezzo.Text);
+            if (prodotto[dim].qnt == 0)
+            prodotto[dim].qnt = 1; 
+
+            for (int i = 0; i < dim+1; i++)
+            {
+                if (prodotto[i].nome == nome.Text)
+                {
+                    prodotto[i].qnt = prodotto[i].qnt + 1;
+                    dim--;
+                }
+                if (i == dim)
+                {
+                    prodotto[dim].nome = nome.Text;
+                    prodotto[dim].prezzo = float.Parse(prezzo.Text);
+                }
+            }
             dim++;
             listView1.Clear();
             Visualizza(prodotto);
@@ -94,7 +109,7 @@ namespace WindowsFormsApp2
 
         public string ProdString(Prodotto prodotto)
         {
-            return "Nome: " + prodotto.nome + " Prezzo: " + prodotto.prezzo.ToString("0.00") + "€";
+            return "Nome: " + prodotto.nome + " Prezzo: " + prodotto.prezzo.ToString("0.00") + "€ " + "Quantità: " + prodotto.qnt;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -256,7 +271,7 @@ namespace WindowsFormsApp2
             float min = Min(dim);
             float max = Max(dim);
 
-            MessageBox.Show("Il prezzo minimo è " + min + " e il prezzo massimo è " + max);
+            MessageBox.Show("Il prezzo minimo è " + min.ToString("0.00") + "€" + " e il prezzo massimo è " + max.ToString("0.00") + "€");
         }
 
         private void BubbleSort(Prodotto[] arr, int dim)

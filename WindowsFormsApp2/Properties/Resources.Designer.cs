@@ -69,5 +69,36 @@ namespace WindowsFormsApp2.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HD_wallpaper_blue_background_ultra_aero_colorful_blue_winter_design_background_cold_shades_clean_simple_gradient_lightblue {
+            get {
+                object obj = ResourceManager.GetObject("HD-wallpaper-blue-background-ultra-aero-colorful-blue-winter-design-background-co" +
+                        "ld-shades-clean-simple-gradient-lightblue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wallpapersden_com_artistic_landscape_view_1920x1080 {
+            get {
+                object obj = ResourceManager.GetObject("wallpapersden.com_artistic-landscape-view_1920x1080", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wallpapersden1 {
+            get {
+                object obj = ResourceManager.GetObject("wallpapersden1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
