@@ -219,6 +219,7 @@ namespace WindowsFormsApp2
                 {
                     writer.WriteLine("Nome: " + prodotto[i].nome + " Prezzo: " + prodotto[i].prezzo + "€");
                 }
+                writer.Close();
             }
         }
 
@@ -232,6 +233,7 @@ namespace WindowsFormsApp2
                 {
                     writer.WriteLine("Nome: " + prodotto[i].nome + " Prezzo: " + prodotto[i].prezzo + "€");
                 }
+                writer.Close();
             }
         }
 
@@ -247,6 +249,44 @@ namespace WindowsFormsApp2
                     listView1.Items.Add(s);
                 }
             }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            float min = Min(dim);
+            float max = Max(dim);
+
+            MessageBox.Show("Il prezzo minimo è " + min + " e il prezzo massimo è " + max);
+        }
+
+        private void BubbleSort(Prodotto[] arr, int dim)
+        {
+            float temp = 0;
+
+            for (int write = 0; write < dim; write++)
+            {
+                for (int sort = 0; sort < dim - 1; sort++)
+                {
+                    if (arr[sort].prezzo > arr[sort + 1].prezzo)
+                    {
+                        temp = arr[sort + 1].prezzo;
+                        arr[sort + 1] = arr[sort];
+                        arr[sort].prezzo = temp;
+                    }
+                }
+            }
+        }
+
+        private float Min(int dim) 
+        {
+            BubbleSort(prodotto, dim);
+            return prodotto[0].prezzo;
+        }
+
+        private float Max(int dim)
+        {
+            BubbleSort(prodotto, dim);
+            return prodotto[dim-1].prezzo;
         }
     }
 }
